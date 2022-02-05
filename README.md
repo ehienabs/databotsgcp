@@ -41,7 +41,7 @@ gsutil mb gs://<BUCKET_NAME>
 
 <img width="914" alt="Annotation 2022-02-04 013840" src="https://user-images.githubusercontent.com/78366369/152643212-cdba4a29-337f-486e-9ca9-83b1d2e834fb.png">
 
-Next we will give some authority to terraform to manage resource using this command;
+Next we will give some authority to terraform to manage resources using this command;
 
 ```bash
 gcloud auth application-default login
@@ -90,7 +90,7 @@ Next we will give some authority to Cloud Build to manage our Kubernetes cluster
 gcloud projects add-iam-policy-binding <PROJECT> -<SERVICE_ACCOUNT>@cloudbuild.gserviceaccount.com --role=roles/container.developer
 ```
 
-Cloud Build uses Triggers to automate CI/CD. GitHub triggers automate builds in repositories using events such as pushes or pulls. After connecting our repository, we will create our Trigger using `Push to Branch` as the event trigger. This means that pushing any changes to our connected repository will trigger a build.
+Cloud Build uses Triggers to automate CI/CD. GitHub Triggers automate builds in repositories using events such as pushes or pulls. After connecting our repository, we will create our Trigger using `Push to Branch` as the event trigger. This means that pushing any changes to our connected repository will trigger a build.
 
 <img width="960" alt="Annotation 2022-02-05 120833" src="https://user-images.githubusercontent.com/78366369/152643367-c8ba866d-ab54-4503-9609-ba528d305b4d.png">
 
