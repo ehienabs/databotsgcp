@@ -26,10 +26,10 @@ gcloud init
 After filling in our configurations we enable the following APIs using this command;
 
 ```bash
-gcloud services enable [compute.googleapis.com](http://compute.googleapis.com/)
-gcloud services enable [cloudresourcemanager.googleapis.com](http://cloudresourcemanager.googleapis.com/)
-gcloud services enable [container.googleapis.com](http://container.googleapis.com/)
-gcloud services enable [servicenetworking.googleapis.com](http://servicenetworking.googleapis.com/)
+gcloud services enable compute.googleapis.com
+gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable container.googleapis.com
+gcloud services enable servicenetworking.googleapis.com
 gcloud services enable cloudbuild.googleapis.com
 ```
 
