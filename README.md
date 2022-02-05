@@ -77,7 +77,7 @@ The builds are executed by Cloud Builder, which are themselves container images 
 
 ### Getting Started
 
-We will define the following build steps in our build config file 
+We will define the following build steps in our [build config](./cloudbuild.yaml) file 
 
 - Step one clones our remote repository using the git builder
 - Step two builds our container image using the docker builder
