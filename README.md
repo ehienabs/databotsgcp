@@ -102,3 +102,6 @@ Since our app is internet facing and exposed with a load balancer, we can reach 
 
 
 <img width="960" alt="Annotation 2022-02-05 120632" src="https://user-images.githubusercontent.com/78366369/152643421-804c9061-e871-4ca8-b324-1f360bb43400.png">
+
+
+Fin
