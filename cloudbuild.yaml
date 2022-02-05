@@ -4,7 +4,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
   id: 'Clone'
-  args: ['clone', 'https://github.com/ehienabs/databot.git']
+  args: ['clone', 'https://github.com/ehienabs/databotsgcp.git']
 
 #Builds the image from the dockerfile
 
