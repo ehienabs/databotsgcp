@@ -73,7 +73,7 @@ This creates a VPC, a subnet, a regional GKE cluster and stores the state in a b
 
 Cloud Build is a serverless service which executes builds on GCP as a series of steps as defined in a configuration file.
 
-The builds are executed by Cloud Builder, which are themselves container images that allow you run commands.
+The builds are executed by Cloud Builders, which are themselves container images that allow you run commands.
 
 ### Getting Started
 
