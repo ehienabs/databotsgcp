@@ -1,0 +1,32 @@
+
+#Clones the repository
+
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  id: 'Clone'
+  args: ['clone', 'https://github.com/ehienabs/databot.git']
+
+#Builds the image from the dockerfile
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/databotsgcp/databotsami:v1'
+  - './app'
+
+# Pushes the image to container registry
+
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push
+  args:
+  - 'push'
+  - 'gcr.io/databotsgcp/databotsami:v1'
+
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=./deployment.yaml
+  - --location=us-central1
+  - --cluster=databotsgcp-gke
