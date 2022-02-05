@@ -12,7 +12,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/databotsgcp/databotsami:v1'
+  - 'gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
   - './app'
 
 # Pushes the image to container registry
@@ -21,7 +21,12 @@ steps:
   id: Push
   args:
   - 'push'
-  - 'gcr.io/databotsgcp/databotsami:v1'
+  - 'gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
+  
+# sets the image in the deployment
+
+- name: 'gcr.io/$PROJECT_ID/kustomize'
+  args: ['edit', 'set', 'image', 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
 
 # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
@@ -29,4 +34,4 @@ steps:
   - run
   - --filename=./deployment.yaml
   - --location=us-central1
-  - --cluster=databotsgcp-gke
+  - --cluster=$PROJECT_ID-gke
