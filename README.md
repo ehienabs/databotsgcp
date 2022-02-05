@@ -87,7 +87,7 @@ We will define the following build steps in our [build config](./cloudbuild.yaml
 Next we will give some authority to Cloud Build to manage our Kubernetes cluster using the following command;
 
 ```bash
-gcloud projects add-iam-policy-binding <PROJECT> -<SERVICE_ACCOUNT[>@cloudbuild.gserviceaccount.com) --role=roles/container.developer
+gcloud projects add-iam-policy-binding <PROJECT> -<SERVICE_ACCOUNT>@cloudbuild.gserviceaccount.com --role=roles/container.developer
 ```
 
 Cloud Build uses Triggers to automate CI/CD. GitHub triggers automates builds in repository events such as pushes or pulls. After connecting our repository, we will create our Trigger using `Push to Branch` as the event trigger. This means that pushing any changes to our connected repository will trigger a build.
