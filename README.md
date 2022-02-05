@@ -82,7 +82,9 @@ We will define the following build steps in our [build config](./cloudbuild.yaml
 - Step one clones our remote repository using the git builder
 - Step two builds our container image using the docker builder
 - Step three pushes our container image to container register using docker builder
+- Step four sets the image of our deployment to the newly built container image using kustomize builder
 - The final step applies our Kubernetes deployment manifest to our cluster using gke-deploy builder
+
 
 Next we will give some authority to Cloud Build to manage our Kubernetes cluster using the following command;
 
