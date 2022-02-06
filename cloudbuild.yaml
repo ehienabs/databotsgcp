@@ -26,7 +26,7 @@ steps:
 # sets the image in the deployment
 
 - name: 'gcr.io/$PROJECT_ID/kustomize'
-  args: 'edit', 'set', 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
+  args: ['edit', 'set', 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA']
   dir: '.'
   
   env: 
