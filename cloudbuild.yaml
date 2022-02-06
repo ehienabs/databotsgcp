@@ -27,11 +27,12 @@ steps:
 
 - name: 'gcr.io/$PROJECT_ID/kustomize'
   args: ['edit', 'set', 'image', 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA']
-  dir: './kustomization.yaml'
+  dir: '.'
   env: 
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
-    - "APPLY=true"
+
+- images: 'gcr.io/$PROJECT_ID/image'
 
 # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
