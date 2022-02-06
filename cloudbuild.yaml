@@ -14,6 +14,15 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA'
   - './app'
+  
+# sets the image in the deployment
+
+- name: 'gcr.io/$PROJECT_ID/kustomize'
+  args: ['edit', 'set', 'image', 'image=gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA']
+  dir: '.'
+  env: 
+    - "CLOUDSDK_COMPUTE_REGION=us-central1"
+    - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
 
 # Pushes the image to container registry
 
@@ -22,17 +31,6 @@ steps:
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA'
-  
-# sets the image in the deployment
-
-- name: 'gcr.io/$PROJECT_ID/kustomize'
-  args: ['edit', 'set', 'image', 'image=gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA', '.']
-  dir: '.'
-  env: 
-    - "CLOUDSDK_COMPUTE_REGION=us-central1"
-    - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
-
-#images: ['gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA']
 
 
 # deploy container image to GKE
