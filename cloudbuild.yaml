@@ -29,7 +29,6 @@ steps:
   args: 
   - 'edit'
   - 'set'
-  - 'image'
   - 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
   - './kustomization.yaml'
   env: 
