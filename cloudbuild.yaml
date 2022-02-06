@@ -31,6 +31,7 @@ steps:
   - 'set'
   - 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA'
   - './kustomization.yaml'
+  
   env: 
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
