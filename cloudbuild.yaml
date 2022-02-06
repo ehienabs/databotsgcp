@@ -32,7 +32,7 @@ steps:
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
 
-images: ['gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA']
+#images: ['gcr.io/$PROJECT_ID/databotsami:$SHORT_SHA']
 
 
 # deploy container image to GKE
