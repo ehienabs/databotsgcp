@@ -33,7 +33,7 @@ steps:
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
 
 - name: 'gcr.io/$PROJECT_ID/kustomize'
-  args: ['build', 'overlays/prod']
+  args: ['build', '.']
   env:
     - 'APPLY=true'
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
