@@ -31,6 +31,7 @@ steps:
   env: 
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
+    - "APPLY=true"
 
 # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
