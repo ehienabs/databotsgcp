@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: image
+        image: gcr.io/databotsgcp/databotsami:vi
         imagePullPolicy: Always
         ports:
         - containerPort: 80
