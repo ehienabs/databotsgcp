@@ -4,3 +4,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - deployment.yaml
+images:
+- name: image
+  newName: gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA
