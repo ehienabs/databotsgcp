@@ -4,7 +4,7 @@
 terraform {
   # Initializes terraform and configures a bucket for remote backend
   backend "gcs" {
-    bucket      = "data2bots-bucket"
+    bucket      = "databotsbucket"
     prefix      = "terraform/state"
   }
 }
