@@ -26,7 +26,12 @@ steps:
 # sets the image in the deployment
 
 - name: 'gcr.io/$PROJECT_ID/kustomize'
-  args: ['edit', 'set', 'image', 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA']
+  args: 
+  - 'edit'
+  - 'set'
+  - 'image'
+  - 'image=gcr.io/$PROJECT_ID/databotsami/$SHORT_SHA
+  - './kustomization.yaml'
   env: 
     - "CLOUDSDK_COMPUTE_REGION=us-central1"
     - "CLOUDSDK_CONTAINER_CLUSTER=$PROJECT_ID-gke"
